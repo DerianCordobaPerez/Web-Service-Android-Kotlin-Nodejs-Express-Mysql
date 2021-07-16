@@ -11,7 +11,7 @@ export const addComputer = (req, res) => {
   if (!req.body)
     res.status(400).send({
       message: 'contenido vacia',
-  })
+    })
 
   const computer = new Computer({
     name: req.body.name,
@@ -45,7 +45,10 @@ export const editComputer = (req, res) => {
         res.status(500).send({
           message: `error al actualizar la computadora con id: ${req.params.id}`,
         })
-    } else res.send(data)
+    } else
+      res.send({
+        message: 'correct',
+      })
   })
 }
 
