@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">WebServiceKotlinNodejsMysql</string>
+
+    <!-- TextViews -->
+    <string name="tvNameComputer">Name Computer:</string>
+    <string name="tvPriceComputer">Price Computer:</string>
+    <string name="tvBrandComputer">Brand Computer:</string>
+    <string name="tvDescriptionComputer">Description Computer:</string>
+
+    <!-- Buttons -->
+    <string name="btnEditComputer">Edit</string>
+    <string name="btnDeleteComputer">Delete</string>
+    <string name="btnOrderBy">Order by</string>
+    <string name="btnSave">Save</string>
+    <string name="btnCancel">Cancel</string>
+    <string name="btnOrder">Order</string>
+    <string name="btnBack">Back to home</string>
+
+    <!-- General Menu -->
+    <string name="menuAdd">Add computer</string>
+    <string name="menuExit">Exit</string>
+
+    <!-- Context Menu -->
+    <string name="contextMenuOrderId">ID</string>
+    <string name="contextMenuOrderName">Name</string>
+    <string name="contextMenuOrderPrice">Price</string>
+
+</resources>

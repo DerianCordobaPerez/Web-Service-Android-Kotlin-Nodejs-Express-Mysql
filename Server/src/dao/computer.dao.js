@@ -4,6 +4,7 @@ import constants from '../constants'
 /**
  *
  * @param {String} err mensaje de error
+ * @param {Function} result funcion de orden superior para manejar el resultado
  */
 const error = (err, result) => {
   console.log(`error: ${err}`)

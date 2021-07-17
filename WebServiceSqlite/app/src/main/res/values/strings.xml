@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">WebServiceSqlite</string>
-
-    <!-- TextView -->
-    <string name="tvNameComputer">Name Computer:</string>
-
-</resources>

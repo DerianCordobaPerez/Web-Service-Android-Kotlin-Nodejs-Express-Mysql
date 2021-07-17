@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:id="@+id/recyclerLayout">
+
+    <TextView
+        android:id="@+id/tvNameComputer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvNameComputer"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/tvPriceComputer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvPriceComputer"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tvNameComputer" />
+
+    <TextView
+        android:id="@+id/tvBrandComputer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvBrandComputer"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tvPriceComputer" />
+
+    <TextView
+        android:id="@+id/tvDescriptionComputer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvDescriptionComputer"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tvBrandComputer" />
+
+    <Button
+        android:id="@+id/btnEditComputer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/btnEdit"
+        android:text="@string/btnEditComputer"
+        android:layout_below="@+id/tvDescriptionComputer"
+        android:layout_toEndOf="@id/tvDescriptionComputer"/>
+
+    <Button
+        android:id="@+id/btnDeleteComputer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:backgroundTint="@color/btnDelete"
+        android:text="@string/btnDeleteComputer"
+        android:layout_below="@+id/tvDescriptionComputer"
+        android:layout_toEndOf="@id/btnEditComputer"/>
+
+</RelativeLayout>

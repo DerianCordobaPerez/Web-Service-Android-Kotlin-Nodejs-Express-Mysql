@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/contextMenuOrderId"
+        android:title="@string/contextMenuOrderId" />
+
+    <item
+        android:id="@+id/contextMenuOrderName"
+        android:title="@string/contextMenuOrderName" />
+
+    <item
+        android:id="@+id/contextMenuOrderPrice"
+        android:title="@string/contextMenuOrderPrice"/>
+
+</menu>

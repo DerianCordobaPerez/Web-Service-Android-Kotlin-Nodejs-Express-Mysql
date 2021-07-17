@@ -47,7 +47,9 @@ export const editComputer = (req, res) => {
         })
     } else
       res.send({
-        message: 'correct',
+        status: 'success',
+        data,
+        message: 'computadoras obtenidas con exito',
       })
   })
 }
@@ -88,6 +90,11 @@ export const getAllComputers = (req, res) => {
       res.status(500).send({
         message: err.message || 'no se obtuvieron las computadoras',
       })
-    else res.send(data)
+    else
+      res.send({
+        status: 'success',
+        computers: data,
+        message: 'computadoras obtenidas con exito',
+      })
   })
 }
