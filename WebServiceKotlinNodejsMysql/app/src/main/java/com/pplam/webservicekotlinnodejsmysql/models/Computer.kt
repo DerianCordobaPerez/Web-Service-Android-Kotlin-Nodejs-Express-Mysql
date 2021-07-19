@@ -1,3 +1,11 @@
 package com.pplam.webservicekotlinnodejsmysql.models
 
-data class Computer(val id: Int, val name: String, val price: Double, val brand: String, val description: String)
+import com.google.gson.annotations.SerializedName
+
+data class Computer(
+    @SerializedName("id") val id: Int,
+    @SerializedName("name")  var name: String,
+    @SerializedName("price")  var price: Double,
+    @SerializedName("brand")  var brand: String,
+    @SerializedName("description")  var description: String
+)

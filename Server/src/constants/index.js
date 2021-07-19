@@ -5,4 +5,5 @@ export default {
     USERNAME: 'root',
     PASSWORD: 'DerianUnanLeonProgramador#14102021',
     TABLE_NAME: 'computer',
+    TABLE_USER: 'user'
 }

@@ -13,5 +13,8 @@
     <color name="btnEdit">#fff000</color>
     <color name="btnOrderBy">#9bb9bf</color>
     <color name="textBtnOrderBy">#000</color>
+    <color name="btnLogin">#09abbf</color>
+    <color name="title">#26A69A</color>
+    <color name="btnComputer">#7691aa</color>
 
 </resources>

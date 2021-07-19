@@ -3,7 +3,8 @@
     package="com.pplam.webservicekotlinnodejsmysql">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -20,6 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activitys.LoginActivity" />
+
+        <activity android:name=".activitys.RegisterActivity" />
+
+        <activity android:name=".activitys.AddEditComputerActivity" />
+
     </application>
 
 </manifest>

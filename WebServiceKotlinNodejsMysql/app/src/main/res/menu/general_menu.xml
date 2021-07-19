@@ -6,6 +6,10 @@
         android:title="@string/menuAdd"/>
 
     <item
+        android:id="@+id/menuLogout"
+        android:title="@string/menuLogout"/>
+
+    <item
         android:id="@+id/menuExit"
         android:title="@string/menuExit"/>
 

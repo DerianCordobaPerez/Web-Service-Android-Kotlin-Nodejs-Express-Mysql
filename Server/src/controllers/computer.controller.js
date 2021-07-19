@@ -25,7 +25,13 @@ export const addComputer = (req, res) => {
       res.status(500).send({
         message: err.message || 'no se guardo la computadora',
       })
-    else res.send(data)
+    else
+      res.send({
+        status: 'success',
+        error: false,
+        computers: null,
+        message: 'computadora agregada correctamente',
+      })
   })
 }
 
@@ -35,52 +41,65 @@ export const editComputer = (req, res) => {
       message: 'contenido vacia',
     })
 
-  updateComputer(req.params.id, new Computer(req.body), (err, data) => {
+  updateComputer(req.body.id, new Computer(req.body), (err, data) => {
     if (err) {
       if (err.kind === 'computadora no encontrada')
         res.status(404).send({
-          message: `computadora con id: ${req.params.id} no encontrado`,
+          message: `computadora con id: ${req.body.id} no encontrado`,
         })
       else
         res.status(500).send({
-          message: `error al actualizar la computadora con id: ${req.params.id}`,
+          message: `error al actualizar la computadora con id: ${req.body.id}`,
         })
     } else
       res.send({
         status: 'success',
-        data,
+        error: false,
+        data: null,
         message: 'computadoras obtenidas con exito',
       })
   })
 }
 
 export const deleteOneComputer = (req, res) => {
-  deleteComputer(req.params.id, (err, data) => {
+  deleteComputer(req.body.id, (err, data) => {
     if (err) {
       if (err.kind === 'computadora no encontrada')
         res.status(404).send({
-          message: `computadora con id: ${req.params.id} no encontrado`,
+          message: `computadora con id: ${req.body.id} no encontrado`,
         })
       else
         res.status(500).send({
-          message: `error al eliminar la computadora con id: ${req.params.id}`,
+          message: `error al eliminar la computadora con id: ${req.body.id}`,
         })
-    } else res.send({message: 'computadora eliminada correctamente'})
+    } else
+      res.send({
+        status: 'success',
+        error: false,
+        computers: null,
+        message: 'computadora eliminada correctamente',
+      })
   })
 }
 
 export const getComputer = (req, res) => {
-  getOne(req.params.id, (err, data) => {
+  getOne(req.body.id, (err, data) => {
     if (err) {
       if (err.kind === 'computadora no encontrada')
         res.status(404).send({
-          message: `computadora con id: ${req.params.id} no encontrado`,
+          message: `computadora con id: ${req.body.id} no encontrado`,
         })
       else
         res.status(500).send({
-          message: `error al recibir la computadora con id: ${req.params.id}`,
+          message: `error al recibir la computadora con id: ${req.body.id}`,
         })
-    } else res.send(data)
+    } else
+      res.send({
+        status: 'success',
+        error: false,
+        computers: null,
+        message: 'computadora actualizada',
+      })
   })
 }
 
@@ -93,6 +112,7 @@ export const getAllComputers = (req, res) => {
     else
       res.send({
         status: 'success',
+        error: false,
         computers: data,
         message: 'computadoras obtenidas con exito',
       })

@@ -21,7 +21,7 @@ export const createComputer = (computer, result) => {
         return
       }
 
-      console.log(`cliente creado`, {id: res.insertId, ...computer})
+      console.log(`computadora creada`, {id: res.insertId, ...computer})
       result(null, {id: res.insertId, ...computer})
     },
   )
@@ -63,7 +63,7 @@ export const getAll = (result) => {
       return
     }
 
-    console.log(`computers: ${res}`)
+    console.log(`computadoras: ${res}`)
     result(null, res)
   })
 }
@@ -114,7 +114,7 @@ export const updateComputer = (id, computer, result) => {
         return
       }
 
-      console.log(`cliente actualizado`, {id, ...computer})
+      console.log(`computadora actualizada`, {id, ...computer})
       result(null, {id, ...computer})
     },
   )

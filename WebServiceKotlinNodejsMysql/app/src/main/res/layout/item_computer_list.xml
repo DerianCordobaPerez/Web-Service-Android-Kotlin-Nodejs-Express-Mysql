@@ -49,8 +49,7 @@
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/btnEdit"
         android:text="@string/btnEditComputer"
-        android:layout_below="@+id/tvDescriptionComputer"
-        android:layout_toEndOf="@id/tvDescriptionComputer"/>
+        android:layout_below="@+id/tvDescriptionComputer" />
 
     <Button
         android:id="@+id/btnDeleteComputer"

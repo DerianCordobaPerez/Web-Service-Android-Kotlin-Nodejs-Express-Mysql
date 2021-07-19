@@ -6,6 +6,12 @@
     <string name="tvPriceComputer">Price Computer:</string>
     <string name="tvBrandComputer">Brand Computer:</string>
     <string name="tvDescriptionComputer">Description Computer:</string>
+    <string name="titleLogin">Login</string>
+    <string name="titleRegister">Register</string>
+    <string name="tvUserName">Username</string>
+    <string name="tvEmail">Email</string>
+    <string name="tvPassword">Password</string>
+    <string name="tvLogin">Already Registered? Login Here</string>
 
     <!-- Buttons -->
     <string name="btnEditComputer">Edit</string>
@@ -15,14 +21,24 @@
     <string name="btnCancel">Cancel</string>
     <string name="btnOrder">Order</string>
     <string name="btnBack">Back to home</string>
+    <string name="btnLogin">Login</string>
+    <string name="btnRegister">Register</string>
+    <string name="btnRegisterNewAccount">You do not have an account? Create a</string>
 
     <!-- General Menu -->
     <string name="menuAdd">Add computer</string>
+    <string name="menuLogout">Logout</string>
     <string name="menuExit">Exit</string>
 
     <!-- Context Menu -->
     <string name="contextMenuOrderId">ID</string>
     <string name="contextMenuOrderName">Name</string>
     <string name="contextMenuOrderPrice">Price</string>
+    <string name="tvTitleComputer">Form computer / Add</string>
+    <string name="nameComputer">Name Computer</string>
+    <string name="priceComputer">Price Computer</string>
+    <string name="brandComputer">Brand Computer</string>
+    <string name="descriptionComputer">Description Computer</string>
+    <string name="btnSaveComputer">Save Computer</string>
 
 </resources>

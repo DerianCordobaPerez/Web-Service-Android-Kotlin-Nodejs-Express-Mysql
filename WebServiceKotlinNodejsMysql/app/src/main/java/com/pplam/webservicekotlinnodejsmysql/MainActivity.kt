@@ -1,34 +1,52 @@
 package com.pplam.webservicekotlinnodejsmysql
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.pplam.webservicekotlinnodejsmysql.activitys.AddEditComputerActivity
+import com.pplam.webservicekotlinnodejsmysql.activitys.LoginActivity
 import com.pplam.webservicekotlinnodejsmysql.adapters.ComputerAdapter
-import com.pplam.webservicekotlinnodejsmysql.models.ComputersJsonWebService
+import com.pplam.webservicekotlinnodejsmysql.models.Service
+import com.pplam.webservicekotlinnodejsmysql.models.SharedPreferenceManager
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private var recyclerView: RecyclerView? = null
     private var adapter: ComputerAdapter? = null
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         registerForContextMenu(findViewById(R.id.btnOrderButton))
 
-        this.recyclerView = findViewById(R.id.recyclerLayout)
+        if(SharedPreferenceManager.getInstance(this).isLoggedIn) {
+            this.title = "Web Service / Main Panel"
 
-        Thread {
-            this.adapter = ComputerAdapter(ComputersJsonWebService().getComputers())
-        }.start()
+            this.recyclerView = findViewById(R.id.recyclerViewLayout)
 
-        this.recyclerView?.adapter = adapter
-        this.recyclerView?.setHasFixedSize(true)
-        this.recyclerView?.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+            this.adapter = ComputerAdapter()
+
+            this.recyclerView?.setHasFixedSize(true)
+            this.recyclerView?.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+
+            this.updateView()
+
+            findViewById<TextView>(R.id.tvUserLoggedIn).text = "Username: ${SharedPreferenceManager.getInstance(this).user.userName} / Email: ${SharedPreferenceManager.getInstance(this).user.email}"
+        } else {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
 
     }
 
@@ -40,7 +58,13 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId) {
             R.id.menuAdd -> {
+                startActivity(Intent(this, AddEditComputerActivity::class.java))
+                true
+            }
 
+            R.id.menuLogout -> {
+                SharedPreferenceManager.getInstance(this).logout()
+                this.finish()
                 true
             }
 
@@ -75,6 +99,18 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             else -> return super.onContextItemSelected(item)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        this.updateView()
+    }
+
+    private fun updateView() {
+        this.recyclerView?.adapter = this.adapter
+        GlobalScope.launch {
+            Service.getAllComputer(adapter = adapter!!)
         }
     }
 
